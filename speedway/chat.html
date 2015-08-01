@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+http://voicechatapi.com/p1hwmpoe1
+<button id="start">start</button>
+<iframe src="http://voicechatapi.com/p1hwmpoe1" id="chat"
+            width="640" height="480"></iframe>
+
+
+  <script src="js/vendor/jquery.js"></script>
+  <script>
+    var makeCallBtn;
+    $(document).ready(function() {
+      var iframe = document.getElementById('chat');
+      var innerDoc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
+      alert(innerDoc);
+      $('#start').on('click', function() {
+        alert('asd');
+        $(makeCallBtn).click();
+      });
+
+      iframe.onload = function() {
+        console.log('>>>>>>>>>><');
+        makeCallBtn = innerDoc.getElementsByClassName('btn');
+        console.log('######');
+
+        alert(makeCallBtn);
+      };
+    });
+
+
+
+  </script>
+</body>
+</html>
